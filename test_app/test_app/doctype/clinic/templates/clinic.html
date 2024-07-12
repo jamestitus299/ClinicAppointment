@@ -4,22 +4,22 @@
 
     <h1>{{ title |e }}</h1>
 
-    <p><strong>Address</strong></p>
-    <p>{{ doc.address }}</p>
+    <p><strong>Doctor</strong></p>
+    {%  set doctor =  frappe.get_doc("Doctor", doc.doctor)  %}
+    <p>{{doctor.first_name + " " + doctor.last_name + ", " + doctor.speciality}}</p>
 
     <p><strong>Contact</strong></p>
     <p>+91 {{doc.contact_number}}</p>
 
-    <p><strong>Doctor</strong></p>
-    {%  set doctor =  frappe.get_doc("Doctor", doc.doctor)  %}
-    <p>{{doctor.first_name + " " + doctor.last_name + ", " + doctor.speciality}}</p>
+    <p><strong>Address</strong></p>
+    <p>{{ doc.address }}</p>
 
     <p><strong>Open</strong></p>
     {%  set shifts =  frappe.get_list("Shift", filters={"clinic": doc.name}, fields=["start_time", "end_time"])  %}
     <ul>
         {%  for shift in shifts | reverse %}
             <li>
-                {{shift.start_time}} - {{shift.end_time}}
+                {{  str(shift.start_time) }} - {{shift.end_time}}
             </li>
         {% endfor %}
     </ul>

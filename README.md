@@ -1,12 +1,9 @@
-### Clinics
+### Clinics 
 
-Clinic app that lets you manage clinics and appointments
+Clinic app (test_app) that lets you manage clinics and appointments (in-work ...)
 
 DocType
--- Clinic
--- Doctor
--- Shift
--- Appointment
+--> Clinic, Doctor, Shift, Appointment
 
 ### Installation
 
