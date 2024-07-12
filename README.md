@@ -1,6 +1,12 @@
 ### Clinics
 
-Clinics app that lets you manage clinics and appointments
+Clinic app that lets you manage clinics and appointments
+
+DocType
+-- Clinic
+-- Doctor
+-- Shift
+-- Appointment
 
 ### Installation
 
